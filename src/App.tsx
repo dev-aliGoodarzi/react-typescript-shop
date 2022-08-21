@@ -1,8 +1,12 @@
 import React from 'react'
 
+
+import Aside from "./Components/Aside/Aside"
 const App = () => {
   return (
-    <div>App</div>
+    <>
+    <Aside/>
+    </>
   )
 }
 
