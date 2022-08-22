@@ -1,14 +1,12 @@
 // React
-import React from 'react'
+import React from "react";
 // React
 
 // CSS
-import styles from "./Aside.module.css"
+import styles from "./Aside.module.css";
 // CSS
 const aside = () => {
-  return (
-    <div className="">aside</div>
-  )
-}
+  return <div className={styles.asideContainer}></div>;
+};
 
-export default aside
+export default aside;

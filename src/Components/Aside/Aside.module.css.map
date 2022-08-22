@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,KAAK,EAAE,GAAG;CACX",
+    "mappings": "",
     "sources": [
         "Aside.module.scss"
     ],

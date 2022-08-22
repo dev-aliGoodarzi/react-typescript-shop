@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
 
-
-import Aside from "./Components/Aside/Aside"
+import Aside from "./Components/Aside/Aside";
 const App = () => {
   return (
     <>
-    <Aside/>
+      <Aside />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
