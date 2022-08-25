@@ -1,1 +1,18 @@
-/* No CSS *//*# sourceMappingURL=Aside.module.css.map */
+.asideContainer {
+  width: 15vw;
+  height: 100vh;
+  background-color: #2d3748;
+}
+
+.asideContainer .logo {
+  background-color: #1a202c;
+}
+
+.asideContainer .logo b {
+  font-family: graphik-regular;
+}
+
+.asideContainer .texty {
+  color: #a0aec0;
+}
+/*# sourceMappingURL=aside.module.css.map */

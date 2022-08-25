@@ -1,9 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,OAAO;CAY1B;;AAfD,AAIE,eAJa,CAIb,KAAK,CAAC;EACJ,gBAAgB,EAAE,OAAO;CAM1B;;AAXH,AAMI,eANW,CAIb,KAAK,CAEH,CAAC,CAAC;EAEE,WAAM,EAAE,eAAe;CAE1B;;AAVL,AAYE,eAZa,CAYb,MAAM,CAAC;EACL,KAAK,EAAE,OAAO;CACf",
     "sources": [
-        "Aside.module.scss"
+        "aside.module.scss"
     ],
     "names": [],
-    "file": "Aside.module.css"
+    "file": "aside.module.css"
 }

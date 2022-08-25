@@ -1,2 +1,16 @@
 .asideContainer {
+  width: 15vw;
+  height: 100vh;
+  background-color: #2d3748;
+  .logo {
+    background-color: #1a202c;
+    b {
+      font : {
+        family: graphik-regular;
+      }
+    }
+  }
+  .texty {
+    color: #a0aec0;
+  }
 }
