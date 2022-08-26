@@ -38,4 +38,5 @@ const homeData: I_Home[] = [
   },
 ];
 
+export const allProductsData: I_Home[] = [...homeData];
 export default homeData;

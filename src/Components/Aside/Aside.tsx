@@ -1,5 +1,5 @@
 // React
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // React
 // CSS
 import styles from "./Aside.module.css";
@@ -17,7 +17,12 @@ import SelectOptionComponent from "./SelectOptionComponent/SelectOptionComponent
 import RaidioButton from "./RaidioButton/RaidioButton";
 import CheckBox from "./CheckBox/CheckBox";
 // Components
-const Aside: React.FC = () => {
+
+type AsideProps = {
+  setFeatureFilter: Function;
+};
+
+const Aside: React.FunctionComponent<AsideProps> = ({ setFeatureFilter }) => {
   // DATA
   const optionsForTransition: I_Transition[] = [
     {
@@ -101,7 +106,6 @@ const Aside: React.FC = () => {
   const [selectedFeature, setSelectedFeature] = useState<string[]>(["Balcony"]);
   // for Features selected Monitoring
   // *************************************
-
   // STATES
   // setStates
   const radioSelectorHandler = (selectedValue: string) => {
@@ -134,6 +138,11 @@ const Aside: React.FC = () => {
     }
   };
   // setStates
+
+  useEffect(() => {
+    setFeatureFilter(selectedFeature);
+  }, [selectedFeature]);
+
   return (
     <div className={`${styles.asideContainer}`}>
       {/* logo */}

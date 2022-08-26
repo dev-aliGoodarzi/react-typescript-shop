@@ -1,6 +1,7 @@
 // React
 import React, { useState } from "react";
-import homeData from "../../DATA/homeData";
+import homeData, { allProductsData } from "../../DATA/homeData";
+import { I_Home } from "../../Models/Models";
 import Header from "../Header/Header";
 import Listings from "./Listings/Listings";
 // React
@@ -8,8 +9,16 @@ import Listings from "./Listings/Listings";
 import styles from "./MainComponent.module.css";
 // CSS
 
-const MainComponent: React.FC = () => {
+type MainComponentProps = {
+  filteringData: string[];
+};
+
+const MainComponent: React.FunctionComponent<MainComponentProps> = ({
+  filteringData,
+}) => {
   const [isFilterd, setIsFilterd] = useState(false);
+  // const [filterdData, setFilterdData] = useState([]);
+
   return (
     <div
       className={`
@@ -25,7 +34,6 @@ const MainComponent: React.FC = () => {
             home={homeData}
           />
         )}
-        {}
       </main>
     </div>
   );

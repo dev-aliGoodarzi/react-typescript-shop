@@ -36,7 +36,7 @@ const Listings: React.FunctionComponent<ListingProps> = ({
         className={`w-full flex flex-row items-center justify-between ${styles.bottom}`}
       >
         {home.map((item) => {
-          return <ProductItem options={item} />;
+          return <ProductItem key={item.id} options={item} />;
         })}
       </div>
     </div>
