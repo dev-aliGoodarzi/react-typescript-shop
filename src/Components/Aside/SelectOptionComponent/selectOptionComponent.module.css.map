@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "AAAA,AACE,sBADoB,CACpB,CAAC,CAAC;EACA,KAAK,EAAE,OAAO;CACf;;AAHH,AAIE,sBAJoB,CAIpB,MAAM,CAAC;EACL,UAAU,EAAE,OAAO;EACnB,UAAU,EAAE,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,kBAAkB,EAAE,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,mBAAmB;EAC3E,aAAa,EAAE,GAAG;EAClB,KAAK,EAAE,IAAI;CAOZ;;AAfH,AASI,sBATkB,CAIpB,MAAM,CAKJ,MAAM,CAAC;EACL,UAAU,EAAE,OAAO;EACnB,UAAU,EAAE,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,kBAAkB,EACxC,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,mBAAmB;EACjC,aAAa,EAAE,GAAG;CACnB",
     "sources": [
-        "selectOptionComponent.module.scss"
+        "SelectOptionComponent.module.scss"
     ],
     "names": [],
-    "file": "selectOptionComponent.module.css"
+    "file": "SelectOptionComponent.module.css"
 }
