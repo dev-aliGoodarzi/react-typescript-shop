@@ -15,4 +15,11 @@
 .asideContainer .texty {
   color: #a0aec0;
 }
+
+.asideContainer .customHr {
+  width: 100%;
+  height: 0.1rem;
+  position: relative;
+  background-color: #1a202c;
+}
 /*# sourceMappingURL=aside.module.css.map */

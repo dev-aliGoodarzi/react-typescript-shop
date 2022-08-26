@@ -1,0 +1,15 @@
+.checkBox {
+  width: 100%;
+  height: 4vh;
+  input {
+    background-color: red;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 0.2s ease all;
+    accent-color: #fff;
+    &:checked {
+      transition: 0.2s ease all;
+      accent-color: #667eea;
+    }
+  }
+}

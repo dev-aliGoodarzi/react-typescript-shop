@@ -7,7 +7,7 @@ import styles from "./selectOptionComponent.module.css";
 const SelectOptionComponent = ({ options, topContent }) => {
   return (
     <div
-      className={`w-100 h-24 flex flex-col items-start justify-between box-border py-3 px-5 ${styles.selectOptionContainer}`}
+      className={`w-100 h-24 flex flex-col items-start justify-between box-border pt-7 px-5 ${styles.selectOptionContainer}`}
     >
       <p className="">{topContent}</p>
       <select

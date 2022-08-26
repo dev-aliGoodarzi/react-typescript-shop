@@ -14,4 +14,10 @@ interface I_PropertyButtons {
   label: string;
   isSelected: boolean;
 }
-export type { I_Transition, I_PriceOptions, I_PropertyButtons };
+
+interface I_CheckBoxes {
+  label: string;
+  name: string;
+  isChecked: boolean;
+}
+export type { I_Transition, I_PriceOptions, I_PropertyButtons, I_CheckBoxes };

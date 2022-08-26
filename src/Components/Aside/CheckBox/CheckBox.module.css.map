@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,GAAG;CAYZ;;AAdD,AAGE,SAHO,CAGP,KAAK,CAAC;EACJ,gBAAgB,EAAE,GAAG;EACrB,KAAK,EAAE,MAAM;EACb,MAAM,EAAE,MAAM;EACd,UAAU,EAAE,aAAa;EACzB,YAAY,EAAE,IAAI;CAKnB;;AAbH,AASI,SATK,CAGP,KAAK,AAMF,QAAQ,CAAC;EACR,UAAU,EAAE,aAAa;EACzB,YAAY,EAAE,OAAO;CACtB",
+    "sources": [
+        "CheckBox.module.scss"
+    ],
+    "names": [],
+    "file": "CheckBox.module.css"
+}
