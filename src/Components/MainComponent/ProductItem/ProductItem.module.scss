@@ -1,0 +1,34 @@
+.productItem {
+  width: 29%;
+  height: 95%;
+  background-color: #fff;
+  border-radius: 1rem;
+  img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  .bottom {
+    width: 100%;
+    height: 40%;
+    p {
+      font : {
+        family: graphik-regular;
+      }
+      margin : {
+        top: 0.8vh;
+      }
+    }
+    .name {
+      color: #718096;
+      margin: 0;
+    }
+    .aboutHome {
+      svg {
+        color: #a0aec0;
+      }
+    }
+  }
+}

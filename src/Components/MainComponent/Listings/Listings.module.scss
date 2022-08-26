@@ -1,0 +1,23 @@
+.listingContainer {
+  height: 50vh;
+  .top {
+    height: 8%;
+    .topName {
+      font : {
+        size: 20px;
+      }
+    }
+    .aboutTopName {
+      color: #718096;
+      font : {
+        size: 16px;
+      }
+    }
+    .viewAllBtn {
+      color: #5a67d8;
+    }
+  }
+  .bottom {
+    height: 90%;
+  }
+}

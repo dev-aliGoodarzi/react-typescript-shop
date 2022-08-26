@@ -1,0 +1,26 @@
+.headerContainer {
+  background: #ffff;
+  .left {
+    width: 20%;
+    background: #edf2f7;
+    border-radius: 8px;
+    input {
+      width: 80%;
+      height: 100%;
+      background: transparent;
+      &:focus {
+        border: 0px solid magenta !important;
+      }
+    }
+  }
+  .right {
+    .helperIcons {
+      svg {
+        font : {
+          size: 1.5rem;
+        }
+        color: #667eea;
+      }
+    }
+  }
+}

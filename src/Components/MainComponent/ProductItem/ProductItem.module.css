@@ -1,0 +1,35 @@
+.productItem {
+  width: 29%;
+  height: 95%;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.productItem img {
+  width: 100%;
+  height: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.productItem .bottom {
+  width: 100%;
+  height: 40%;
+}
+
+.productItem .bottom p {
+  font-family: graphik-regular;
+  margin-top: 0.8vh;
+}
+
+.productItem .bottom .name {
+  color: #718096;
+  margin: 0;
+}
+
+.productItem .bottom .aboutHome svg {
+  color: #a0aec0;
+}
+/*# sourceMappingURL=ProductItem.module.css.map */

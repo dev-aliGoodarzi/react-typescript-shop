@@ -1,0 +1,25 @@
+.listingContainer {
+  height: 50vh;
+}
+
+.listingContainer .top {
+  height: 8%;
+}
+
+.listingContainer .top .topName {
+  font-size: 20px;
+}
+
+.listingContainer .top .aboutTopName {
+  color: #718096;
+  font-size: 16px;
+}
+
+.listingContainer .top .viewAllBtn {
+  color: #5a67d8;
+}
+
+.listingContainer .bottom {
+  height: 90%;
+}
+/*# sourceMappingURL=Listings.module.css.map */

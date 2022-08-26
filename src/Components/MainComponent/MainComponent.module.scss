@@ -1,0 +1,9 @@
+.mainContainer {
+  width: 85vw;
+  height: 100vh;
+  main {
+    width: 100%;
+    height: calc(100% - 80px);
+    background-color: #e5e5e5;
+  }
+}

@@ -1,0 +1,25 @@
+.headerContainer {
+  background: #ffff;
+}
+
+.headerContainer .left {
+  width: 20%;
+  background: #edf2f7;
+  border-radius: 8px;
+}
+
+.headerContainer .left input {
+  width: 80%;
+  height: 100%;
+  background: transparent;
+}
+
+.headerContainer .left input:focus {
+  border: 0px solid magenta !important;
+}
+
+.headerContainer .right .helperIcons svg {
+  font-size: 1.5rem;
+  color: #667eea;
+}
+/*# sourceMappingURL=Header.module.css.map */

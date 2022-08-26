@@ -20,4 +20,28 @@ interface I_CheckBoxes {
   name: string;
   isChecked: boolean;
 }
-export type { I_Transition, I_PriceOptions, I_PropertyButtons, I_CheckBoxes };
+
+interface I_Home {
+  id: string;
+  name: string;
+  price: number;
+  address: string;
+  yearOld: string;
+  image: string;
+  whenUploaded: string;
+  options: string[];
+}
+
+interface I_HeaderLinks {
+  to: string;
+  nameForDisplay: string;
+  isSelected: boolean;
+}
+export type {
+  I_Transition,
+  I_PriceOptions,
+  I_PropertyButtons,
+  I_CheckBoxes,
+  I_Home,
+  I_HeaderLinks,
+};

@@ -3,13 +3,17 @@
   height: 4vh;
   input {
     background-color: red;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.4rem;
+    height: 1.4rem;
     transition: 0.2s ease all;
     accent-color: #fff;
+    &:hover {
+      transform: scale(1.1);
+    }
     &:checked {
       transition: 0.2s ease all;
       accent-color: #667eea;
+      transform: scale(1.2);
     }
   }
 }
