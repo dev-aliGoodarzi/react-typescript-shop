@@ -37,6 +37,11 @@ interface I_HeaderLinks {
   nameForDisplay: string;
   isSelected: boolean;
 }
+interface I_OptionsForSearch {
+  id: string;
+  options: string[];
+}
+
 export type {
   I_Transition,
   I_PriceOptions,
@@ -44,4 +49,5 @@ export type {
   I_CheckBoxes,
   I_Home,
   I_HeaderLinks,
+  I_OptionsForSearch,
 };

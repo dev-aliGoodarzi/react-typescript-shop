@@ -141,7 +141,7 @@ const Aside: React.FunctionComponent<AsideProps> = ({ setFeatureFilter }) => {
 
   useEffect(() => {
     setFeatureFilter(selectedFeature);
-  }, [selectedFeature]);
+  }, [setFeatureFilter, selectedFeature]);
 
   return (
     <div className={`${styles.asideContainer}`}>

@@ -1,5 +1,5 @@
 // React
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import homeData, { allProductsData } from "../../DATA/homeData";
 import { I_Home } from "../../Models/Models";
 import Header from "../Header/Header";
@@ -17,7 +17,40 @@ const MainComponent: React.FunctionComponent<MainComponentProps> = ({
   filteringData,
 }) => {
   const [isFilterd, setIsFilterd] = useState(false);
-  // const [filterdData, setFilterdData] = useState([]);
+  const [filterdData, setFilterdData] = useState<I_Home[]>([]);
+  const filterHelper = (dataForFilter: string): void => {
+    const fields: any[] = allProductsData.map(
+      (item) =>
+        item.options.includes(dataForFilter) && {
+          ...item,
+        }
+    );
+    const selectedItems: I_Home[] = fields.filter((item) => !!item);
+    setFilterdData((): I_Home[] => [...selectedItems]);
+  };
+
+  useMemo(() => {
+    if (filteringData.length > 0) {
+      setIsFilterd(true);
+      if (filteringData.includes("Balcony")) {
+        filterHelper("Balcony");
+      }
+      if (filteringData.includes("CentralAir")) {
+        filterHelper("CentralAir");
+      }
+      if (filteringData.includes("Pool")) {
+        filterHelper("Pool");
+      }
+      if (filteringData.includes("FrontPorch")) {
+        filterHelper("FrontPorch");
+      }
+      if (filteringData.includes("DoubleDriveway")) {
+        filterHelper("DoubleDriveway");
+      }
+    } else {
+      setIsFilterd(false);
+    }
+  }, [filteringData]);
 
   return (
     <div
@@ -32,6 +65,13 @@ const MainComponent: React.FunctionComponent<MainComponentProps> = ({
             topName={"Hot Listings"}
             aboutTopName={"The hottest homes just listed on the market"}
             home={homeData}
+          />
+        )}
+        {isFilterd && (
+          <Listings
+            topName={"Hot Listings"}
+            aboutTopName={"The hottest homes just listed on the market"}
+            home={filterdData}
           />
         )}
       </main>
