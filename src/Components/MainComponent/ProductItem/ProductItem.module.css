@@ -1,8 +1,9 @@
 .productItem {
-  width: 29%;
+  width: 28%;
   height: 95%;
   background-color: #fff;
   border-radius: 1rem;
+  margin-top: 1vh;
 }
 
 .productItem img {

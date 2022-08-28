@@ -1,6 +1,6 @@
 // React
 import React, { useState, useMemo } from "react";
-import homeData, { allProductsData } from "../../DATA/homeData";
+import { allProductsData, homeData, recentlyAdded } from "../../DATA/homeData";
 import { I_Home } from "../../Models/Models";
 import Header from "../Header/Header";
 import Listings from "./Listings/Listings";
@@ -61,17 +61,24 @@ const MainComponent: React.FunctionComponent<MainComponentProps> = ({
       <Header />
       <main>
         {!isFilterd && (
-          <Listings
-            topName={"Hot Listings"}
-            aboutTopName={"The hottest homes just listed on the market"}
-            home={homeData}
-          />
+          <>
+            <Listings
+              topName={"Hot Listings"}
+              aboutTopName={"The hottest homes just listed on the market"}
+              products={homeData}
+            />
+            <Listings
+              topName={"Recently Added"}
+              aboutTopName={""}
+              products={recentlyAdded}
+            />
+          </>
         )}
         {isFilterd && (
           <Listings
             topName={"Hot Listings"}
             aboutTopName={"The hottest homes just listed on the market"}
-            home={filterdData}
+            products={filterdData}
           />
         )}
       </main>

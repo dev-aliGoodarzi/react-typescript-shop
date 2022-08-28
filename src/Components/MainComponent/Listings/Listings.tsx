@@ -11,13 +11,13 @@ import styles from "./Listings.module.css";
 type ListingProps = {
   topName: string;
   aboutTopName: string;
-  home: I_Home[];
+  products: I_Home[];
 };
 
 const Listings: React.FunctionComponent<ListingProps> = ({
   topName,
   aboutTopName,
-  home,
+  products,
 }) => {
   return (
     <div
@@ -26,16 +26,20 @@ const Listings: React.FunctionComponent<ListingProps> = ({
       <div className={`w-full  ${styles.top}`}>
         <p className={styles.topName}>{topName}</p>
         <div className={`flex flex-row justify-between ${styles.bottom}`}>
-          <p className={styles.aboutTopName}>{aboutTopName}</p>
-          <Link to={"/"} className={styles.viewAllBtn}>
-            View All
-          </Link>
+          <p className={styles.aboutTopName}>
+            {aboutTopName === "" ? null : aboutTopName}
+          </p>
+          {aboutTopName === "" ? null : (
+            <Link to={"/"} className={styles.viewAllBtn}>
+              View All
+            </Link>
+          )}
         </div>
       </div>
       <div
-        className={`w-full flex flex-row items-center justify-between ${styles.bottom}`}
+        className={`w-full flex flex-row flex-wrap items-center justify-between ${styles.bottom}`}
       >
-        {home.map((item) => {
+        {products.map((item) => {
           return <ProductItem key={item.id} options={item} />;
         })}
       </div>
