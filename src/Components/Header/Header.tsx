@@ -11,7 +11,15 @@ import { AiOutlineMail } from "react-icons/ai";
 import { GiMagnifyingGlass } from "react-icons/gi";
 import Links from "./Links/Links";
 
-const Header = () => {
+type HeaderProps = {
+  setIsSearchActived: Function;
+  setSearchData: Function;
+};
+
+const Header: React.FunctionComponent<HeaderProps> = ({
+  setIsSearchActived,
+  setSearchData,
+}) => {
   const links: I_HeaderLinks[] = [
     {
       to: "/news",
@@ -57,6 +65,13 @@ const Header = () => {
           name=""
           id=""
           placeholder="Search By Location"
+          onChange={(e) => {
+            if (e.target.value.length === 0) return setIsSearchActived(false);
+            else {
+              setIsSearchActived(true);
+              setSearchData(e.target.value);
+            }
+          }}
         />
       </div>
       <div className={`w-3/12 flex flex-row justify-between ${styles.right}`}>

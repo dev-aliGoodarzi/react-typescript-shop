@@ -1,86 +1,77 @@
 // React
-import React, { useState, useMemo } from "react";
-import { allProductsData, homeData, recentlyAdded } from "../../DATA/homeData";
-import { I_Home } from "../../Models/Models";
-import Header from "../Header/Header";
-import Listings from "./Listings/Listings";
+import React from "react";
 // React
+
 // CSS
 import styles from "./MainComponent.module.css";
 // CSS
 
+// Modules
+import { Fade } from "react-awesome-reveal";
+// Modules
+
+// Models
+import { I_Home } from "../../Models/Models";
+// Models
+
+// Components
+import Header from "../Header/Header";
+import Listings from "./Listings/Listings";
+// Components
+
 type MainComponentProps = {
-  filteringData: string[];
+  isFilterd: boolean;
+  featureFilter: string[];
+  itemsForShow: I_Home[];
+  filterdProducts: I_Home[];
+  isSearchActived: boolean;
+  setIsSearchActived: Function;
+  setSearchData: Function;
 };
 
 const MainComponent: React.FunctionComponent<MainComponentProps> = ({
-  filteringData,
+  isFilterd,
+  featureFilter,
+  itemsForShow,
+  filterdProducts,
+  isSearchActived,
+  setIsSearchActived,
+  setSearchData,
 }) => {
-  const [isFilterd, setIsFilterd] = useState(false);
-  const [filterdData, setFilterdData] = useState<I_Home[]>([]);
-  const filterHelper = (dataForFilter: string): void => {
-    const fields: any[] = allProductsData.map(
-      (item) =>
-        item.options.includes(dataForFilter) && {
-          ...item,
-        }
-    );
-    const selectedItems: I_Home[] = fields.filter((item) => !!item);
-    setFilterdData((): I_Home[] => [...selectedItems]);
-  };
-
-  useMemo(() => {
-    if (filteringData.length > 0) {
-      setIsFilterd(true);
-      if (filteringData.includes("Balcony")) {
-        filterHelper("Balcony");
-      }
-      if (filteringData.includes("CentralAir")) {
-        filterHelper("CentralAir");
-      }
-      if (filteringData.includes("Pool")) {
-        filterHelper("Pool");
-      }
-      if (filteringData.includes("FrontPorch")) {
-        filterHelper("FrontPorch");
-      }
-      if (filteringData.includes("DoubleDriveway")) {
-        filterHelper("DoubleDriveway");
-      }
-    } else {
-      setIsFilterd(false);
-    }
-  }, [filteringData]);
-
   return (
     <div
       className={`
       2xl:flex 2xl:flex-col 2xl:justify-between 2xl:items-center
       ${styles.mainContainer}`}
     >
-      <Header />
+      <Header
+        setIsSearchActived={setIsSearchActived}
+        setSearchData={setSearchData}
+      />
       <main>
-        {!isFilterd && (
-          <>
+        <Fade>
+          {!isFilterd && !isSearchActived && (
             <Listings
-              topName={"Hot Listings"}
+              topName={"Hot Listings without Filter"}
               aboutTopName={"The hottest homes just listed on the market"}
-              products={homeData}
+              products={itemsForShow}
             />
+          )}
+          {isFilterd && !isSearchActived && (
             <Listings
-              topName={"Recently Added"}
-              aboutTopName={""}
-              products={recentlyAdded}
+              aboutTopName={`Filtering By USER`}
+              topName={`Filtering By ${featureFilter.toString()}`}
+              products={filterdProducts}
             />
-          </>
-        )}
-        {isFilterd && (
-          <Listings
-            topName={"Hot Listings"}
-            aboutTopName={"The hottest homes just listed on the market"}
-            products={filterdData}
-          />
-        )}
+          )}
+          {isSearchActived && (
+            <Listings
+              aboutTopName={`Filtering By USER`}
+              topName={`Filtering By ${featureFilter.toString()}`}
+              products={filterdProducts}
+            />
+          )}
+        </Fade>
       </main>
     </div>
   );

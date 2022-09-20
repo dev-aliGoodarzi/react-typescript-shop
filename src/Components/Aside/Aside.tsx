@@ -1,5 +1,5 @@
 // React
-import React, { useEffect, useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 // React
 // CSS
 import styles from "./Aside.module.css";
@@ -20,9 +20,15 @@ import CheckBox from "./CheckBox/CheckBox";
 
 type AsideProps = {
   setFeatureFilter: Function;
+  setPriceFilter: Function;
+  setPropertyType: Function;
 };
 
-const Aside: React.FunctionComponent<AsideProps> = ({ setFeatureFilter }) => {
+const Aside: React.FunctionComponent<AsideProps> = ({
+  setFeatureFilter,
+  setPriceFilter,
+  setPropertyType,
+}) => {
   // DATA
   const optionsForTransition: I_Transition[] = [
     {
@@ -43,6 +49,11 @@ const Aside: React.FunctionComponent<AsideProps> = ({ setFeatureFilter }) => {
   ];
   const optionsForPrice: I_PriceOptions[] = [
     {
+      value: 0,
+      id: "all",
+      valueForShow: "All ",
+    },
+    {
       value: 1000000,
       id: "pricePlusOneMillion",
       valueForShow: "1,000,000 +",
@@ -55,8 +66,12 @@ const Aside: React.FunctionComponent<AsideProps> = ({ setFeatureFilter }) => {
   ];
   const propertyButtons: I_PropertyButtons[] = [
     {
-      label: "House",
+      label: "All",
       isSelected: true,
+    },
+    {
+      label: "House",
+      isSelected: false,
     },
     {
       label: "Apartment",
@@ -71,7 +86,7 @@ const Aside: React.FunctionComponent<AsideProps> = ({ setFeatureFilter }) => {
     {
       name: "Balcony",
       label: "Balcony",
-      isChecked: true,
+      isChecked: false,
     },
     {
       name: "CentralAir",
@@ -99,31 +114,22 @@ const Aside: React.FunctionComponent<AsideProps> = ({ setFeatureFilter }) => {
   // *************************************
   // for propertyType selected Monitoring
   const [propertyTypeState, setPropertyTypeState] = useState(propertyButtons);
-  const [selectedPropertyType, setSelectedPropertyType] = useState("House");
   // for propertyType Monitoring
   // *************************************
   // for Features selected Monitoring
-  const [selectedFeature, setSelectedFeature] = useState<string[]>(["Balcony"]);
+  const [selectedFeature, setSelectedFeature] = useState<string[]>([]);
   // for Features selected Monitoring
+  // *************************************
+  const priceChangeStateSetter = (val: string): void => {
+    setPriceFilter(val);
+  };
   // *************************************
   // STATES
   // setStates
-  const radioSelectorHandler = (selectedValue: string) => {
-    const copyOfState = [...propertyTypeState];
-    copyOfState.forEach((item) => (item.isSelected = false));
-    const filterdByValueIndex = copyOfState.findIndex(
-      (item) => item.label === selectedValue
-    );
-    copyOfState[filterdByValueIndex].isSelected = true;
-    setSelectedPropertyType(copyOfState[filterdByValueIndex].label);
-    setPropertyTypeState(copyOfState);
-  };
-  //
   const featureSelectorHandler = (featureName: string) => {
     /**  in here if selected Feature has this
      Arg (fatureName) removeIt from State
      * Else add It **/
-
     if (selectedFeature.includes(featureName)) {
       const copyOfState = [...selectedFeature];
       const selectedIndex = copyOfState.findIndex(
@@ -156,12 +162,14 @@ const Aside: React.FunctionComponent<AsideProps> = ({ setFeatureFilter }) => {
       <SelectOptionComponent
         options={optionsForTransition}
         topContent={"Transaction Type"}
+        changi={() => {}}
       />
       {/* Transition Type */}
       {/* Price Range  */}
       <SelectOptionComponent
         options={optionsForPrice}
         topContent={"Price Range"}
+        changi={priceChangeStateSetter}
       />
       {/* Price Range  */}
       {/* Property Type */}
@@ -173,7 +181,9 @@ const Aside: React.FunctionComponent<AsideProps> = ({ setFeatureFilter }) => {
               options={item}
               key={item.label}
               onClick={() => {
-                radioSelectorHandler(item.label);
+                propertyTypeState.forEach((item) => (item.isSelected = false));
+                item.isSelected = true;
+                setPropertyType(item.label);
               }}
             />
           );

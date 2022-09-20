@@ -1,5 +1,7 @@
 .checkBox {
-  width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   height: 4vh;
 }
 

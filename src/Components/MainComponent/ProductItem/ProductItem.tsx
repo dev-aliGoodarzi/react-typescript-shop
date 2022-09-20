@@ -16,12 +16,13 @@ type ProductItemProps = {
     yearOld: string;
     image: string;
     whenUploaded: string;
+    options: string[];
   };
 };
 // CUSTOM TYPES
 
 const ProductItem: React.FunctionComponent<ProductItemProps> = ({
-  options: { name, price, address, yearOld, image, whenUploaded },
+  options: { name, price, address, yearOld, image, whenUploaded, options },
 }) => {
   return (
     <div className={`flex flex-col ${styles.productItem}`}>
@@ -39,6 +40,9 @@ const ProductItem: React.FunctionComponent<ProductItemProps> = ({
         >
           <BsFillFlagFill className="2xl:mr-2" /> Listed {whenUploaded} days age
         </p>
+        {options.map((item) => {
+          return <span key={item.length}>{item} </span>;
+        })}
       </div>
     </div>
   );

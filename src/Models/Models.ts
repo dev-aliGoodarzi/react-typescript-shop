@@ -30,8 +30,8 @@ interface I_Home {
   image: string;
   whenUploaded: string;
   options: string[];
+  propertyType: string;
 }
-
 interface I_HeaderLinks {
   to: string;
   nameForDisplay: string;

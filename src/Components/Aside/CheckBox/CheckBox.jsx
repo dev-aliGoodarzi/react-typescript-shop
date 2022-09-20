@@ -13,17 +13,16 @@ const CheckBox = ({ options: { name, label, isChecked }, onClick }) => {
     >
       <input
         type="checkbox"
-        onClick={() => onClick(name)}
         defaultChecked={isChecked ? true : false}
         name={name}
-        id={label}
+        id={`${label}`}
+        onChange={() => onClick(name)}
       />
       <label
         className="
       text-white
       2xl:ml-3 "
-        htmlFor={label}
-        onClick={() => onClick(name)}
+        htmlFor={`${label}`}
       >
         {label}
       </label>
