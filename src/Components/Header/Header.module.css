@@ -6,16 +6,23 @@
   width: 20%;
   background: #edf2f7;
   border-radius: 8px;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
 }
 
 .headerContainer .left input {
   width: 80%;
-  height: 100%;
+  height: 80%;
   background: transparent;
+  position: relative;
+  -webkit-transition: 0.05s ease border;
+  transition: 0.05s ease border;
 }
 
 .headerContainer .left input:focus {
-  border: 0px solid magenta !important;
+  border: none !important;
+  outline: none;
+  border-bottom: 2px solid #6c11b8 !important;
 }
 
 .headerContainer .right .helperIcons svg {

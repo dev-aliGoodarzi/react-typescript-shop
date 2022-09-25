@@ -57,11 +57,17 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     >
       <div
         className={`flex items-center justify-center 2xl:h-3/4 ${styles.left}`}
+        onFocus={(e) => {
+          e.currentTarget.style.width = "30%";
+        }}
+        onBlur={(e) => {
+          e.currentTarget.style.width = "20%";
+        }}
       >
-        <GiMagnifyingGlass className="2xl:text-xl" />
+        <GiMagnifyingGlass className="2xl:text-xl " />
         <input
           type="text"
-          className="ml-4"
+          className="ml-4  "
           name=""
           id=""
           placeholder="Search By Location"

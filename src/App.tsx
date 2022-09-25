@@ -51,23 +51,20 @@ const App: React.FunctionComponent = () => {
     }
   };
   const ifFilterON__sortItemsBySearchString = (): I_Home[] => {
-    if (featureFilter.length > 0) {
-      return ifFilterON__checkPriceAndMakeItReady().filter((item) => {
-        return item.address.includes(searchData);
-      });
-    } else {
-      return ifFilterON__checkPriceAndMakeItReady();
-    }
+    return ifFilterON__checkPriceAndMakeItReady().filter((item) => {
+      return item.address
+        .toLowerCase()
+        .includes(searchData.toLocaleLowerCase());
+    });
   };
   const ifFilterOFF__sortItemsBySearchString = () => {
-    if (featureFilter.length > 0) {
-      return ifFilterOFF__checkPriceAndMakeItReady().filter((item) => {
-        return item.address.includes(searchData);
-      });
-    } else {
-      return ifFilterON__checkPriceAndMakeItReady();
-    }
+    return ifFilterOFF__checkPriceAndMakeItReady().filter((item) => {
+      return item.address
+        .toLowerCase()
+        .includes(searchData.toLocaleLowerCase());
+    });
   };
+
   // Methods
   /***********************STATES********************* */
   // storing propertyTypes In here
@@ -121,10 +118,6 @@ const App: React.FunctionComponent = () => {
   //
   useEffect(() => {
     if (featureFilter.length > 0) {
-      console.log(
-        "ifFilterON__sortItemsBySearchString",
-        ifFilterON__sortItemsBySearchString()
-      );
       setReadyItems(ifFilterON__sortItemsBySearchString());
     } else {
       setReadyItems(ifFilterOFF__sortItemsBySearchString());
